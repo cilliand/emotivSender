@@ -66,11 +66,11 @@ void ofApp::update(){
 			}
 
 			if (readytocollect) {
-                float * buffer = new float[128];
-                for(int i = 0; i < 128; i++){
-                    buffer[i] = ofRandom(4800.0,4900.0);
+                float * buffer = new float[256];
+                for(int i = 0; i < 256; i++){
+                    buffer[i] = ofRandom(4849.0,4851.0);
                 }
-                for(int i = 0; i < 128; i++){
+                for(int i = 0; i < 256; i++){
                     ofxOscMessage m;
                     m.setAddress("/d");
                     std::cout << buffer[i] << std::endl;
@@ -134,7 +134,6 @@ void ofApp::draw(){
 	buf = "sending osc messages to " + string(HOST) + " " + ofToString(PORT);
 	ofDrawBitmapString(buf, 10, 20);
     if(resultReceived == false){
-
         if(r == 0){
             upArrow.draw((ofGetWidth()/2)-32,0, 64, 64);
             ofSleepMillis(150);
